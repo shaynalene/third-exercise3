@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Kaffee</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="shortcut icon" type="image/jpg" href="images\favicon.png"/>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap');
+
+/* quick note */
+
+.info {
+    
+	padding: 0px 20px 0px 20px;
+	overflow: hidden;
+	height: 28px;
+	border: 0px;
+	margin: 0px;
+	background-color: #402B09;
+	color: white;
+}
+
+.info h6.pleft {
+	padding-top: 5px;
+	float: left;
+	border: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	font-size:12px; 
+}
+
+.info h6.pright {
+	text-align: right;
+	padding-top: 5px;
+	padding-right: 10px;
+	border: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	font-size:12px; 
+}
+
+/* navbar */
+
+.navbar {
+  
+  overflow: hidden;
+  background-color: #eae4dd;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #402B09;
+  text-align: center;
+  padding: 14px 20px 0px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+.navbar a.logo {
+  padding-left: 40px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-family: 'Libre Caslon Text', serif;
+  text-align: center;
+  font-weight: 900;
+  color: #402B09;
+  text-shadow: 1px 1px #FFAA04;
+  font-size: 25px;
+  float: left;
+}
+
+.navbar a.logo:hover {
+  border: none;
+  background-color: #eae4dd;
+  color: black;
+  padding-bottom: 0px;
+}
+
+.navbar a:hover {
+  padding-bottom: 11px;
+  background-color: #ddd;
+  color: black;
+  border-bottom: 3px solid brown;
+}
+
+.navbar a.active {
+  padding-bottom: 11px;
+  background-color: #ddd;
+  color: black;
+  border-bottom: 3px solid brown;
+}
+
+/* header */
+
+header {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("images/coffee.gif");
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) );
+	
+}
+
+h4 {
+  font-family:'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+h4 span {
+  font-family:'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+h1 {
+	font-family: 'Poppins', sans-serif; 
+	font-size: 100px;
+	margin-bottom: 10px;
+}
+
+h3, p {
+	font-family: 'Montserrat', sans-serif;
+	margin-bottom: 30px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,600);
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  margin-bottom: 50px;
+  background: #402B09;
+}
+
+h4 {
+  margin: 5px 20px;
+}
+
+span {
+  float: right;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.comment-box {
+  width: 60%;
+  margin-top: 50px;
+  background: #eae4dd;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url('https://www.pngkit.com/png/full/925-9259399_pattern-patterns-background-tumblr-doddle-black-free-memphis.png');
+  background-repeat: round;
+  background-color: rgba(255,255,255,0.8);
+    background-blend-mode: lighten;
+
+  
+}
+.comment-box p {
+  margin: 0 30px 15px;
+  font-weight: 300;
+  color: #333;
+  word-wrap: break-word;
+  background: #EEE;
+  padding: 5px 10px;
+}
+
+.header {
+  margin: 15px 20px;
+  margin-bottom: 0px;
+  font-size: 40px;
+  font-weight: 600;
+  padding-bottom: 0px;
+}
+
+.subheader {
+  font-size: 15px;
+  font-weight: 600;
+  padding-top:0px;
+  margin-bottom: 0px;
+  margin-left: 20px;
+  padding-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.headerh4 {
+  margin: 15px 20px;
+  font-size: 30px;
+  font-weight: 600;
+  border-bottom: 2px solid#402B09;
+}
+
+form .formtitle {
+ background: none;
+ margin: none;
+  font-size: 20px;
+  font-weight: 600;
+
+}
+
+form {
+  margin: 10px 10px 30px 10px;
+}
+form ::-webkit-input-placeholder {
+  color: #78788c;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input[type=text]:focus, textarea:focus{
+ background-color:  #DBC29D;
+}
+
+input[type=text], textarea {
+  margin: 5px 10px;
+  outline: none;
+  background: #efefef;
+  border: 0;
+  padding: 10px;
+  border: 2px solid #402B09;
+  font-family: 'Montserrat', sans-serif;
+}
+
+input[type=email], textarea {
+  margin: 5px 10px;
+  outline: none;
+  background: #efefef;
+  border: 0;
+  padding: 10px;
+  border: 2px solid #402B09;
+  font-family: 'Montserrat', sans-serif;
+}
+
+textarea {
+  resize: none;
+  width: 85%;
+}
+
+input[type=text] {
+  width: 50%;
+  margin-bottom: 15px;
+  border: 2px solid #402B09;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.footer p {
+  float: right;
+  font-size: 13px;
+  margin-bottom: 10px;
+  background: #FFF;
+}
+
+form .label {
+  font-weight: bold;
+  color: black;
+  padding-top: 20px;
+  padding-left: 12px;
+  letter-spacing: 0.025em;
+  font-size: 25px;
+  line-height: 1.25;
+  position: relative;
+  z-index: 100;
+  
+}
+
+.input-icon {
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 48px;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: left;
+  color: #ffeba7;
+  -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+
+#comments p{
+  border: 2px solid #402B09;
+  padding: 18px;
+  font-size: 18px;
+  font-weight:600px;
+}
+
+#comments h4{
+  padding-bottom: 10px;
+  font-size: 23px;
+}
+
+#comments i{
+  background-image: url('https://www.pngkit.com/png/full/925-9259399_pattern-patterns-background-tumblr-doddle-black-free-memphis.png');
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 4px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  margin-top:20px;
+  margin-left:12px;
+}
+
+.btn-14 {
+  background: #402B09;
+  color: #fff;
+  z-index: 1;
+}
+.btn-14:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #e0e5ec;
+  transition: all 0.3s ease;
+}
+.btn-14:hover {
+  color: #402B09;
+}
+.btn-14:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.btn-14:active {
+  top: 2px;
+}
+
+.button-header {
+    font-family: 'Poppins', sans-serif;
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+  margin-left: 0px;
+	margin-bottom: 10px;
+	box-shadow: 0 3px 20px 0 #0000003b;
+ float: none ;
+}
+
+.button-header:hover {
+  background: #402B09;
+  color: #fff;
+}
+
+
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+    <div class ="info">
+    <h6 class = "pleft"> PROJECT PROTOTYPE </h6>
+    <h6 class="pright"> THIRD EXERCISE  </h6>
+    </div>
+    
+    <div class="navbar"> 
+      <a href="index.html" class="logo">The Kaffee</a>
+      <a href="contactpage.html" class="w3-hide-small">Contact Us</a>
+      <a href="feedbackpage.html" class="active w3-hide-small">Feedbacks</a>
+      <a href="notavailable.com" class="w3-hide-small">Coffee Museum</a>
+      <a href="notavailable.com" class="w3-hide-small">Products</a>
+      <a href="mainpage.html" class="w3-hide-small">Main</a>
+    </div>
+
+
+    <header>
+        <div class="overlay">
+    <h1>Feedbacks</h1>
+    <h3>Comment your insights about this shop and its products!</h3>
+    <p> <b>Note:</b> <i>Highlights are comments/feedbacks that were chosen by the community.</i> </p>
+        <br>
+        <button class="button-header">HIGHLIGHTS</button>
+            </div>
+    </header>
+
+    <div class="container">
+      <div class="comment-box">
+        <div class="comment-form">
+          <div class="header">FEEDBACK FORM</div>
+           <div class="subheader"><i>Note: Comments are monitored and filtered.</i></div>
+          <form name="form1" onsubmit="event.preventDefault(); postComment()">
+      <input type="hidden" name="_template" value="table"></input>
+            <div> 
+              <label class='label required' for='name'>Full Name</label><br>
+              <input type="text" name="name" id="name" placeholder="Enter your full name." required/></input>
+            </div>
+            <div>
+              <label class='label required' for='name'>Email</label><br>
+              <input type="text" name="email" id="email" placeholder="Enter your email."  required/></input>
+            </div>
+            <div>
+              <label class='label required' for='name'>Comment</label><br>
+            </div>
+              <textarea type ="text" name="text" class ="name"  id="comment" placeholder="Enter your comment." rows="5" cols="30" onClick="select_area()"> </textarea>
+            
+            <button class="custom-btn btn-14" type="submit" onClick="validate_text()">COMMENT</button>
+          </form>  
+        </div>
+        <div>
+          <h4 class="headerh4">Comments</h4>
+          <div id="comments"></div>
+        </div>
+      </div>
+    </div>
+    
+
+  
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.0/firebase.js"></script>
+    <script src="script.js"></script>
+
+  </body>
+  </html>

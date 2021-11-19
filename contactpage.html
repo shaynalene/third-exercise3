@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="shortcut icon" type="image/jpg" href="images\favicon.png"/>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #402B09;
+  margin: 0;
+}
+.form {
+  width: 340px;
+  height: 450px;
+  background: #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 0 40px -10px #000;
+  margin: calc(50vh - 220px);
+  left: 120px;
+  padding: 20px 30px;
+  max-width: calc(100vw - 40px);
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+h2 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  width: 180px;
+  color: #402B09;
+  border-bottom: 3px solid #402B09;
+}
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s;
+  border-bottom: 2px solid #402B09;
+}
+input:focus {
+  border-bottom: 2px solid #78788c;
+}
+p:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #5a5a5a;
+}
+
+button {
+  float: right;
+  padding: 8px 12px;
+  margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
+  border: 2px solid #402B09;
+  background: 0;
+  color: #5a5a6e;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+button:hover {
+  background: #402B09;
+  color: #fff;
+}
+
+.hello {
+  content: "Hi";
+  position: absolute;
+  bottom: -15px;
+  right: -20px;
+  background: #8F6118;
+  color: #fff;
+  width: 320px;
+  padding: 16px 4px 16px 0;
+  border-radius: 6px;
+  font-size: 13px;
+  box-shadow: 10px 10px 40px -14px #000;
+}
+span {
+  margin: 0 5px 0 15px;
+}
+
+
+.info {
+	padding: 0px 20px 0px 20px;
+	overflow: hidden;
+	height: 28px;
+	border: 0px;
+	margin: 0px;
+	background-color: #402B09;
+	color: white;
+}
+
+.info h6.pleft {
+	padding-top: 5px;
+	float: left;
+	border: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	font-size:12px; 
+}
+
+.info h6.pright {
+	text-align: right;
+	padding-top: 5px;
+	padding-right: 10px;
+	border: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	font-size:12px; 
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #eae4dd;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #402B09;
+  text-align: center;
+  padding: 14px 20px 0px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+.navbar a.logo {
+  padding-left: 40px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-family: 'Libre Caslon Text', serif;
+  text-align: center;
+  font-weight: 900;
+  color: #402B09;
+  text-shadow: 1px 1px #FFAA04;
+  font-size: 25px;
+  float: left;
+}
+
+.navbar a.logo:hover {
+  border: none;
+  background-color: #eae4dd;
+  color: black;
+  padding-bottom: 0px;
+}
+
+.navbar a:hover {
+  padding-bottom: 11px;
+  background-color: #ddd;
+  color: black;
+  border-bottom: 3px solid brown;
+}
+
+.navbar a.active {
+  padding-bottom: 11px;
+  background-color: #ddd;
+  color: black;
+  border-bottom: 3px solid brown;
+}
+
+
+header {
+	background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("images/coffee.gif");
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+header .overlay{
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #333;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) );
+	
+}
+
+h1 {
+	font-family: 'Poppins', sans-serif; 
+	font-size: 100px;
+	margin-bottom: 10px;
+  margin-top: 0px;
+padding-top: 0px;
+}
+
+h4 {
+  font-family:'Poppins', sans-serif;
+  font-size: 20px;
+margin-top: 0px;
+padding-top: 0px;
+}
+
+h4 span {
+  font-family:'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+header h3, p {
+	font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+	margin-bottom: 30px;
+}
+
+header p {
+	font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+	margin-bottom: 30px;
+}
+
+.button-header {
+    font-family: 'Poppins', sans-serif;
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #333;
+	background: #fff;
+  margin-left: 0px;
+	margin-bottom: 10px;
+	box-shadow: 0 3px 20px 0 #0000003b;
+ float: none ;
+  
+}
+
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  float: right;
+  margin: calc(10vh - 220px) auto;
+}
+
+.map-responsive h2{
+  left:550px;
+  top:540px;
+  position:absolute;
+  margin: calc(50vh - 220px);
+  float: right;
+  align-self: right;
+  color: #eae4dd;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+}
+
+.map-responsive p{
+  left:550px;
+  top: 940px;
+  position:absolute;
+  margin: calc(50vh - 220px);
+  float: right;
+  align-self: right;
+  color: #eae4dd;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+}
+
+.map-responsive iframe{
+  left:550px;
+  top: 590px;
+  height:50%;
+  width:40%;
+  position:absolute;
+  margin: calc(50vh - 220px);
+  float: right;
+  align-self: right;
+}
+
+
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  h1 {
+    float: none;
+    width: 100%;
+    text-align:center;
+    font-size: 60px;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+
+
+</style>
+
+
+<body>
+
+
+
+  <div class ="info">
+    <h6 class = "pleft"> PROJECT PROTOTYPE </h6>
+    <h6 class="pright"> THIRD EXERCISE  </h6>
+  </div>
+    
+    <div class="navbar"> 
+      <a href="index.html" class="logo">The Kaffee</a>
+      <a href="contactpage.html" class="active w3-hide-small">Contact Us</a>
+      <a href="feedbackpage.html" class="w3-hide-small">Feedbacks</a>
+      <a href="notavailable.com" class="w3-hide-small">Coffee Museum</a>
+      <a href="notavailable.com" class="w3-hide-small">Products</a>
+      <a href="mainpage.html" class="w3-hide-small">Main</a>
+    </div>
+
+
+    <header>
+      <div class="overlay">
+  <h1>Contact Us</h1>
+  <h3>Comment your insights about this shop and its products!</h3>
+  <p> <b>Note:</b> <i>Comments are monitored and filtered.</i> </p>
+      <button class ="button-header">READ MORE</button>
+          </div>
+  </header>
+
+    <form class="form" action="https://formsubmit.co/shaynalene.pabalate@adamson.edu.ph" method="POST">
+      <h2>CONTACT US</h2>
+      <input type="hidden" name="_subject" value=" The Kaffee Contact Submission"></input>
+      <input type="hidden" name="_autoresponse" value="Thank you for answering! Here is a copy of your messsage."></input>
+      <input type="hidden" name="_next" value="https://shaynalene.github.io/third-exercise3/mainpage.html"></input>
+      <p type="Name:"><input type="text" placeholder="Enter your name." name="name" required></input></p>
+      <p type="Email:"><input placeholder="Enter your email." name="email" required></input></p>
+      <p type="Message:"><input type="text" placeholder="Enter your message." name="message" required></input></p>
+      
+      <button type="submit">Send Message</button>
+      <div class="hello">
+        <span class="fa fa-phone"></span>+63234 567
+        <span class="fa fa-envelope-o"></span> thekaffee@company.com
+      </div>
+    </form>
+<div class= "map-responsive">
+  <h2>NAVIGATION</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d241.3262226129591!2d120.98559329459312!3d14.586561197469798!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x52dea1e12d0145a0!2sAdamson%20University!5e0!3m2!1sen!2sph!4v1637323326196!5m2!1sen!2sph" width="200" height="200" frameborder="0" style="border:0" allowfullscreen=""> </iframe>
+<p><i>Note: This map is not the real location of the shop.</i></p>
+  </div>
+
+</body>
+</html>

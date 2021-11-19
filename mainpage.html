@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Kaffee</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="shortcut icon" type="image/jpg" href="images\favicon.png"/>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@700&family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto&display=swap');
+
+.wrapper {
+  display: inline-flex;
+}
+
+.wrapper .icon {
+  position: relative;
+  background-color: #eae4dd;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background-color: #eae4dd;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #402B09;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background-color: #de463b;
+  color: #ffffff;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #eae4dd;
+  
+}
+
+.w3-center {
+  font-family:'Poppins', sans-serif; 
+  color: #402B09;
+}
+
+.w3-large {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 30px;
+  color: #402B09;
+}
+
+
+.info {
+	padding: 0px 20px 0px 20px;
+	overflow: hidden;
+	height: 28px;
+	border: 0px;
+	margin: 0px;
+	background-color: #402B09;
+	color: white;
+}
+
+.info h6.pleft {
+	padding-top: 5px;
+	float: left;
+	border: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	font-size:12px; 
+}
+
+.info h6.pright {
+	text-align: right;
+	padding-top: 5px;
+	padding-right: 10px;
+	border: 0px;
+	margin: 0px;
+	font-family: 'Poppins', sans-serif;
+	font-size:12px; 
+}
+
+/* Header/logo Title */
+.header {
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url("images/coffee.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 320px;
+  padding-left: 500px;
+  text-align: center;
+  height: 100%; 
+  color: white;
+}
+
+.beans {
+  position: absolute;
+  left: 8%;
+  top: 20%;
+  border: 3px solid white;
+}
+
+.header h1 {
+  font-size: 50px;
+  position: absolute;
+  left: 54%;
+  top: 20%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header h2 {
+  font-size: 100px;
+  position: absolute;
+  left: 45%;
+  top: 30%;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.header p {
+  font-size: 25px;
+  position: absolute;
+  left: 43%;
+  top: 50%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header h3 {
+  font-size: 20px;
+  position: absolute;
+  left: 58%;
+  top: 75%;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.header h3:hover {
+  text-shadow: 1px 1px;
+}
+
+
+.navbar {
+  overflow: hidden;
+  background-color: #eae4dd;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #402B09;
+  text-align: center;
+  padding: 14px 20px 0px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+}
+
+.navbar a.logo {
+  padding-left: 40px;
+  padding-right: 60px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-family: 'Libre Caslon Text', serif;
+  text-align: center;
+  font-weight: 900;
+  color: #402B09;
+  text-shadow: 1px 1px #FFAA04;
+  font-size: 25px;
+  float: left;
+}
+
+.navbar a.logo:hover {
+  border: none;
+  background-color: #eae4dd;
+  color: black;
+  padding-bottom: 0px;
+}
+
+.navbar a:hover {
+  padding-bottom: 11px;
+  background-color: #ddd;
+  color: black;
+  border-bottom: 3px solid brown;
+}
+
+.navbar a.active {
+  padding-bottom: 11px;
+  background-color: #ddd;
+  color: black;
+  border-bottom: 3px solid brown;
+}
+
+.featured {
+  text-align: center;
+  padding-top: 20px;
+  border-bottom: 5px solid brown;
+  max-width: 300px;
+  margin: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.featured h1{
+  font-family: 'Poppins', sans-serif;
+  color: #402B09;
+}
+
+
+.main {
+  background-color: #96794B;
+  color: #F6F2E9;
+}
+
+.testimonial {
+  color: black;
+  padding: 40px;
+  padding-top: 90px;
+}
+
+/* Align text centrally */
+
+.testimonial h3{
+  text-align: center;
+   font-family: 'Poppins', sans-serif;
+}
+
+.testimonial p{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+
+/* Create a white card with some shadow around it */
+.card {
+  padding: 20px 15px 15px 15px;
+  background-color: white;
+  border-radius: 10px;
+   box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+  
+}
+
+.card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+.card-center {
+  padding:90px 25px 15px 25px;
+  background-color: #402B09;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card-center:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0,0,0,0.25), 
+    -5px -5px 30px 15px rgba(0,0,0,0.22);
+}
+
+button {
+  margin: 20px;
+  outline: none;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  padding: 4px 25px;
+  border: 2px solid #000;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-14 {
+  background: #402B09;
+  color: #fff;
+  z-index: 1;
+}
+.btn-14:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #e0e5ec;
+  transition: all 0.3s ease;
+}
+.btn-14:hover {
+  color: #402B09;
+}
+.btn-14:hover:after {
+  top: auto;
+  bottom: 0;
+  height: 100%;
+}
+.btn-14:active {
+  top: 2px;
+}
+
+.titlecard {
+  font-family: 'Poppins', sans-serif;
+  color: #402B09;
+}
+
+
+/* center the blockquote in the page */
+.blockquote-wrapper {
+   display: flex;
+   height: 100vh;
+   padding: 0 20px;
+}
+
+/* Blockquote main style */
+.blockquote {
+    position: relative;
+    font-family: 'Barlow Condensed', sans-serif;
+    max-width: 620px;
+    margin: 80px auto;
+    align-self: center;
+	
+}
+
+/* Blockquote header */
+.blockquote h1 {
+    font-family: 'Poppins',sans-serif;
+    position: relative; /* for pseudos */
+    color: #402B09;
+    font-size: 2.8rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    border: 2px solid #fff;
+    border: solid 2px;
+    border-radius:20px;
+    padding: 25px;
+}
+
+/* Blockquote right double quotes */
+.blockquote h1:after {
+    content:"";
+    position: absolute;
+    border: 2px solid #402B09;
+    border-radius: 0 50px 0 0;
+    width: 60px;
+    height: 60px;
+    bottom: -62px;
+    left: 50px;
+    border-bottom: none;
+    border-left: none;
+    z-index: 3; 
+}
+
+.blockquote h1:before {
+    content:"";
+    position: absolute;
+    width: 80px;
+    border: 6px solid #eae4dd;
+    bottom: -3px;
+    left: 50px;
+    z-index: 2;
+}
+
+
+/* increase header size after 600px */
+@media all and (min-width: 600px) {
+    .blockquote h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+   }
+
+}
+
+/* Blockquote subheader */
+.blockquote h4 {
+    position: relative;
+    color: #402B09;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    padding-top: 15px;
+    z-index: 1;
+    margin-left:150px;
+    padding-left:12px;
+}
+
+ 
+.blockquote h4:first-letter {
+  margin-left:-12px;
+}
+
+.w3-block{
+
+display:block;
+width:100%;
+margin-left: 0px;
+}
+
+.w3-brown {color:#fff!important;
+background-color:#402B09!important;
+}
+
+.footer #button{
+	width:35px;
+	height:35px;
+	border: #402B09 12px solid;
+	border-radius:35px;
+	margin:0 auto;
+	position:relative;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.footer #button:hover{
+	width:35px;
+	height:35px;
+	border: #402B09 12px solid;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	position:relative;
+}
+.footer {
+	bottom:0;
+	left:0;
+	position:fixed;
+    width: 100%;
+    height: 2em;
+    overflow:hidden;
+    margin:0 auto;
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	z-index:999;
+}
+.footer:hover {
+	-webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+	height: 36em;
+}
+.footer #container{
+	margin-top:5px;
+	width:100%;
+height:100%;
+  position:relative;
+  top:0;
+  left:0;
+	background: #402B09;
+}
+.footer #cont{
+  position:relative;
+  top:-45px;
+  right:190px;
+	width:150px;
+	height:auto;
+	margin:0 auto;
+}
+.footer_center{
+	width:500px;
+	float:left;
+  text-align:center;
+}
+.footer h3{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	font-weight: 100;
+	margin-top:70px;
+	margin-left:5px;
+  color:#eae4dd;
+}
+
+.footer .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#eae4dd;
+  margin-bottom:0;
+}
+
+@media screen and (max-width: 1200px) {
+  .header p {   
+    text-align: center;
+    align-content: center;
+    left: 5%;
+    padding-top: 50px;
+    padding-right: 20px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header h2 {   
+    text-align: center;
+    align-content: center;
+    left: 5%;
+    line-height: 80px;
+    padding-top: 15px;
+    font-size: 90px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+   .header h3 {
+    padding-top: 50px;
+     left: 22%;
+   }  
+}
+  
+
+@media screen and (max-width: 1200px) {
+  .header h1 {   
+    text-align: center;
+    left: 10%;
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .row, .navbar {   
+    flex-direction: column;
+  }
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid-3{
+    flex: 100%;
+    min-width: 15%;
+  }
+
+}
+
+
+</style>
+</head>
+<body>
+
+<div class ="info">
+<h6 class = "pleft"> PROJECT PROTOTYPE </h6>
+<h6 class="pright"> THIRD EXERCISE  </h6>
+</div>
+
+<div class="navbar"> 
+  <a href="index.html" class="logo">The Kaffee</a>
+  <a href="contactpage.html" class="w3-hide-small">Contact Us</a>
+  <a href="feedbackpage.html" class="w3-hide-small">Feedbacks</a>
+  <a href="notavailable.com" class="w3-hide-small">Coffee Museum</a>
+  <a href="notavailablr.com" class="w3-hide-small">Products</a>
+  <a href="mainpage.html" class="active w3-hide-small">Main</a>
+</div>
+
+<div class="header">
+<div class = "beans w3-hide-small">
+    <img src="images\coffee-beans.jpg" alt="" border=3 height=500 width=400></img>
+  </div>
+  <h1>NEW PRODUCT!</h1>
+  <h2>Kaffee Beans</h2>
+  <p> Exclusively imported Arabica coffee beans. <br> It's significantly different from your regular coffee bean. <br> Trust us, many have tried it. </p>
+  <h3>Scroll down for more info. <img src="images\doubledown.gif" alt="" height=20 width=20></img></h3>
+</div>
+
+<div class="w3-content" style="max-width:1100px">
+
+<div class = "featured"> <h1> WHAT'S NEW <h1> </div>
+
+<div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large">
+     <img src="images\package.png" class="w3-round w3-image w3-opacity-min" alt="Package" width="550" height="600">
+	 <p> <b> <i>Packaging of Kaffee Beans.<br> Sizes may vary. </i></b> </p>
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">Kaffee Beans</h1>
+      <h5 class="w3-center">Exclusively imported Arabica coffee beans.</h5>
+      <p class="w3-large w3-center"> It is <b> The Kaffee's </b> take of European coffee. These coffee beans are grown on a humble and local coffee farm in <b> Hamburg, Germany </b>. 
+            Aided with undivided attention, The Kaffee company ensures the premium quality of these Arabica coffee beans once packed and purchased.</p>
+    <h1 class="w3-center"><button class="custom-btn btn-14">Shop Now</button></h1>
+	</div>
+  </div>
+  
+  <div class = "featured"> <h1> FEATURED <h1> </div>
+  
+  <br>
+  <br>
+  <br>
+  
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="images\recipe10.jpg" alt="RECIPE 1" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3 class = "titlecard">Rüdesheimer Kaffee</h3>
+        <h6 class="w3-opacity">From $10</h6>
+        <p> A sweet, brand and coffee beverage made of local German Asbach brandy topped with whipped cream and chocolate.</p>
+        <p>Available on-site and on delivery.</p>
+        <p class="w3-large"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></p>
+        <button class="w3-button w3-block w3-brown w3-margin-bottom">Order Now</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images\recipe2.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3 class = "titlecard">Pharisäer Kaffee</h3>
+        <h6 class="w3-opacity">From $12</h6>
+        <p> A long coffee with a shot of rum, enhanced by notes of cocoa and sweetened even more by adding whipped cream.</p>
+        <p>Available on-site and on delivery.</p>
+        <p class="w3-large"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i></p>
+        <button class="w3-button w3-block w3-brown w3-margin-bottom">Order Now</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="images\recipe3.jpg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3 class = "titlecard">Eiskaffee</h3>
+        <h6 class="w3-opacity">From $13</h6>
+        <p>It’s a German take of a refreshing iced coffee added with vanilla ice-cream, generously topped with delicious whipped cream.</p>
+        <p>Available on-site and on delivery.</p>
+        <p class="w3-large"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </p>
+        <button class="w3-button w3-block w3-brown w3-margin-bottom">Order Now</button>
+      </div>
+    </div>
+  </div>
+
+<div class = "featured"> <h1> REVIEWS <h1> </div>
+
+    <div class="w3-container" style="padding:50px 16px" id="about">
+      <h3 class="w3-center">Based on 200 reviews.</h3>
+      <p class="w3-center w3-large">Here are some of the reviews of our now-loyal customers.</p>
+      <div class="w3-row-padding w3-center" style="margin-top:64px">
+        <div class="w3-quarter">
+          <i class="fa ion-coffee w3-margin-bottom w3-jumbo w3-center"></i>
+          <p class="w3-large">John Doe</p>
+          <p>"It really is different from all the coffee beans I had since the day I was allowed to even drink coffee."</p>
+        </div>
+        <div class="w3-quarter">
+          <i class="fa ion-coffee w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Jane Doe</p>
+          <p>"Say hello to my new go-to coffee shop! I love how they specialized in German coffee recipes."</p>
+        </div>
+        <div class="w3-quarter">
+          <i class="fa ion-coffee w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">John Doe</p>
+          <p>"I dared to taste a new variety of coffee beans and drinks. Now I am a changed coffee geek with better taste buds."</p>
+        </div>
+        <div class="w3-quarter">
+          <i class="fa ion-coffee w3-margin-bottom w3-jumbo"></i>
+          <p class="w3-large">Jane Doe</p>
+          <p>"I may declare myself as a coffee addict after purchasing 3 bags of Kaffee beans. Give it to me as a christmas gift as well."</p>
+        </div>
+      </div>
+      <br>
+      
+      
+    </div>
+	
+	<section class = "quote">
+	<div class="blockquote-wrapper">
+  <div class="blockquote">
+    <h1>
+      “You can tell when you have crossed the frontier into Germany because of the unique taste of the coffee.”
+     </h1>
+    <h4>– Edward VII (1841-1910), <br><em> son of Queen Victoria and Prince Albert</em></h4>
+  </div>
+</div>
+</section>
+
+
+<div class="footer">
+
+  <div id="button"></div>
+<div id="container">
+<div id="cont">
+<div class="footer_center">
+	   <h3>Catch Us On</h3>
+
+
+
+<div class="wrapper">
+  <div class="icon facebook">
+    <div class="tooltip">Facebook</div>
+    <span><i class="icon ion-social-facebook"></i></span>
+  </div>
+  <div class="icon twitter">
+    <div class="tooltip">Twitter</div>
+    <span><i class="icon ion-social-twitter"></i></span>
+  </div>
+  <div class="icon instagram">
+    <div class="tooltip">Instagram</div>
+    <span><i class="icon ion-social-instagram"></i></span>
+  </div>
+  <div class="icon github">
+    <div class="tooltip">Github</div>
+    <span><i class="icon ion-social-github"></i></span>
+  </div>
+  <div class="icon youtube">
+    <div class="tooltip">Youtube</div>
+    <span><i class="icon ion-social-youtube"></i></span>
+  </div>
+  </div>
+
+<p class="copyright">Created by Shaynalene Pabalate</p>
+
+
+</div>
+  </div>
+
+</body>
+</html>
